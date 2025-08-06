@@ -15,7 +15,7 @@ supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 app = Flask(__name__)
 
-@app.route('/submit', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def submit_form():
     if request.method == 'POST':
         confession = request.form['confession']
@@ -34,3 +34,4 @@ def show_confession():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
