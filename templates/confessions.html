@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confessions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen p-6">
+    <h1 class="text-3xl font-bold mb-6 text-center">Anonymous Confessions</h1>
+    <div class="max-w-xl mx-auto bg-white p-6 rounded-lg shadow-lg space-y-4">
+        {% for confession in confessions %}
+            <div class="bg-gray-50 p-4 rounded-lg shadow">
+                {{ confession }}
+            </div>
+        {% else %}
+            <p class="text-gray-500 text-center">No confessions yet. Be the first!</p>
+        {% endfor %}
+    </div>
+    <div class="text-center mt-6">
+        <a href="/submit" class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition">Submit Another</a>
+    </div>
+</body>
+</html>
